@@ -12,15 +12,25 @@ A simple web application that dynamically generates a list of application in an 
 		
 ### Getting Started
 * Create an non interactive client and name it `Auth0-Management-API`
+![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture1.PNG)
 	* Click Non Interactive Clients and then Create
+	![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture2.PNG)
 	* On the next screen, a user will be able to select Auth0 Management API in the drop down
+	![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture3.PNG)
 	* Once clicked, a user then will navigate to the API and give permission to that client
+	![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture4.PNG)
 	* Toggle the button next to the desire client `Auth0-Management-API` from unauthorized to authorized, in doing so, a list will appear for scopes. In this application, read:clients and read:rules are required, if additional data is wanted, please reference API v2 documentation for which scopes to choose.
+	![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture5.PNG)
 	* Then, click Update
+	![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture7.PNG)
 * Next, create a web application to get the data from the API and display it for end users, name it `Rules-Per-An-Application`
 * Click on Single Page Web Applications and Create
+![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture8.PNG)
 * Select Node.js as the technology you are using for the web app
+![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture9.PNG)
 * To limit who can view this web app, create a rule and select `whitelist for a specific app` and enter the name of the client in the code [(context.clientName !== 'NameOfTheAppWithWhiteList')], then click save
+![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture10.PNG)
+![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture11.PNG)
 * In the terminal, write `git clone `
 * Navigate to the root of that folder in the terminal and type `install npm` - installs the dependencies/libraries that are needed and default libraries
 * Copy configuration (.env) and replace with your own information 
