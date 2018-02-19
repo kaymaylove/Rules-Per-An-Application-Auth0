@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Auth0 Rules for Each Application
+  ul
+    each val in rulesPerApp
+      li
+        div=val.client.name
+        each rule in val.rules
+          div=rule
