@@ -32,7 +32,7 @@ A simple web application that dynamically generates a list of application in an 
 ![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture10.PNG)
 ![](https://github.com/kaymaylove/Rules-Per-An-Application-Auth0/blob/master/imgs/Capture11.PNG)
 * In the terminal, write `git clone `
-* Navigate to the root of that folder in the terminal and type `install npm` - installs the dependencies/libraries that are needed and default libraries
+* Navigate to the root of that folder in the terminal and type `npm install` - installs the dependencies/libraries that are needed and default libraries
 * Copy configuration (.env) and replace with your own information 
 	* AUTO_CLIENT_ID - `Rules-Per-An-Application` client  id (found next to the client or in settings)
 	* AUTO_DOMAIN - found in the settings of the `Rules-Per-An-Application` client
