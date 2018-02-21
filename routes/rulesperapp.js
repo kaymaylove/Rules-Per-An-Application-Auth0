@@ -28,7 +28,7 @@ var requestData = function (resource, accessToken) {
 };
 
 var createArrayofRulesPerApp = function (rule, rulesPerApp) {
-
+    // matches on single quotation marks 
     // search get all rules data for 'rule.script.match(/if\s*\(context\.clientName === \'([^\']+)\'\)/)'
     // if matches, push rule into array for that client
     var foundClientName = rule.script.match(/if\s*\(context\.clientName === \'([^\']+)\'\)/);
@@ -40,6 +40,18 @@ var createArrayofRulesPerApp = function (rule, rulesPerApp) {
             }
         });
     }
+
+    // matches on double quotation marks 
+    var foundClientName_withdoublequotation = rule.script.match(/if\s*\(context\.clientName === \"([^\']+)\"\)/);
+        if (foundClientName_withdoublequotation) {
+        var clientName = foundClientName_withdoublequotation[1];
+        rulesPerApp.forEach(function (rulesPerThisApp) {
+            if (rulesPerThisApp.client.name === clientName) {
+                rulesPerThisApp.rules.push(rule.name);
+            }
+        });
+    }
+    // matches on single quotation marks 
     // search get all rules data for 'rule.script.match(/if\s*\(context\.clientName !== \'([^\']+)\'\)/))'
     // get  list of applications by matching !== client name , this rule bypasses every app except this one
     // thus, this rule is applied to this app only
@@ -47,6 +59,17 @@ var createArrayofRulesPerApp = function (rule, rulesPerApp) {
     var foundClientName2 = rule.script.match(/if\s*\(context\.clientName !== \'([^\']+)\'\)/);
     if (foundClientName2) {
         var clientName2 = foundClientName2[1];
+        rulesPerApp.forEach(function (rulesPerThisApp) {
+            if (rulesPerThisApp.client.name === clientName2) {
+                rulesPerThisApp.rules.push(rule.name);
+            }
+        });
+    }
+
+// matches on double quotation marks 
+    var foundClientName2_withdoublequotation = rule.script.match(/if\s*\(context\.clientName !== \"([^\']+)\"\)/);
+    if (foundClientName2_withdoublequotation) {
+        var clientName2 = foundClientName2_withdoublequotation[1];
         rulesPerApp.forEach(function (rulesPerThisApp) {
             if (rulesPerThisApp.client.name === clientName2) {
                 rulesPerThisApp.rules.push(rule.name);
